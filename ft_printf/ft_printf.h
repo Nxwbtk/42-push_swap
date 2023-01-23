@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 19:38:58 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/24 01:21:10 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/01/24 01:54:32 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
-// # include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
 int	ft_fmt(const char c, va_list args);

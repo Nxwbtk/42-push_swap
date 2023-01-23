@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+         #
+#    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/05 23:11:56 by bsirikam          #+#    #+#              #
-#    Updated: 2022/08/17 18:45:00 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/01/24 02:15:39 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@ar rcs $(NAME) $(OBJ)
 
 bonus: all
-	$(CC) $(CFLAGS) -c $(SRC_B)
+	@$(CC) $(CFLAGS) -c $(SRC_B)
 	@ar rcs $(NAME) $(OBJ_B)
 
 clean:
