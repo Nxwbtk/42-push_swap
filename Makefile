@@ -2,7 +2,9 @@ NAME = push_swap
 
 SRC = main.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_C = $(SRC:.c=.o)
+OBJ_DIR = obj
+OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ_C))
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 HEADER = push_swap.h
@@ -12,7 +14,8 @@ FT_PRINTF_PATH = ft_printf/
 LIBFT_A = libft/libft.a
 FT_PRINTF_A = ft_printf/libftprintf.a
 
-%.o: %.c $(HEADER)
+$(OBJ_DIR)/%.o: %.c $(HEADER)
+	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 all : LIBFT FT_PRINTF $(NAME)
@@ -37,6 +40,7 @@ clean :
 fclean :
 	@make -C $(LIBFT_PATH) fclean
 	@make -C $(FT_PRINTF_PATH) fclean
+	@rm -rf $(OBJ_DIR)
 	@$(RM) $(NAME)
 
 re : fclean all
