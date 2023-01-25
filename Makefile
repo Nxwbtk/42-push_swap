@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = main.c
+SRC = main.c ft_check_arg.c
 
 OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj

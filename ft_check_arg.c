@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/25 11:31:58 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/01/25 02:36:23 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_less_arg(char *str)
+void	ft_check_arg(char *argv[])
 {
-	ft_printf("%s\n", str);
-	exit(EXIT_SUCCESS);
-}
+	int	i;
+	int	j;
 
-int	main(int argc, char *argv[])
-{
-	if (argc < 2)
-		ft_less_arg("Arguments are less than 2");
-	ft_check_arg(argv);
-	return (0);
+	i = 1;
+	j = 0;
+	while (argv[i])
+	{
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
+				j++;
+			else
+			{
+				ft_printf("Error Argument is not number.\n");
+				exit(EXIT_SUCCESS);
+			}
+		}
+		i++;
+	}
 }
