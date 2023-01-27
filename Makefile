@@ -18,17 +18,17 @@ $(OBJ_DIR)/%.o: %.c $(HEADER)
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all : LIBFT FT_PRINTF $(NAME)
+all :  $(NAME) 
 
-$(NAME) : $(OBJ)
+$(NAME) : libft ft_printf $(OBJ)
 	@norminette -R CheckForbiddenSourceHeader $(SRC)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT_A) $(FT_PRINTF_A)
 
-LIBFT :
+libft :
 	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)
 	@make -C $(LIBFT_PATH) 1> /dev/null
 
-FT_PRINTF :
+ft_printf :
 	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)
 	@make -C $(FT_PRINTF_PATH) 1> /dev/null
 
@@ -44,3 +44,4 @@ fclean :
 	@$(RM) $(NAME)
 
 re : fclean all
+.PHONY:libft ft_printf
