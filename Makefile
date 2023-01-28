@@ -1,6 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
+#    Updated: 2023/01/28 15:33:17 by bsirikam         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 
-SRC = main.c ft_check_arg.c
+SRC = main.c ft_check_arg.c ft_lst_mai.c ft_add_back.c ft_lst_last.c \
+ft_check_same.c
 
 OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj
@@ -18,19 +31,24 @@ $(OBJ_DIR)/%.o: %.c $(HEADER)
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all :  $(NAME) 
+all :  $(NAME)
 
 $(NAME) : libft ft_printf $(OBJ)
-	@norminette -R CheckForbiddenSourceHeader $(SRC)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT_A) $(FT_PRINTF_A)
 
 libft :
-	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)
 	@make -C $(LIBFT_PATH) 1> /dev/null
 
 ft_printf :
-	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)
 	@make -C $(FT_PRINTF_PATH) 1> /dev/null
+
+norm :
+	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)*.c
+	@norminette -R CheckDefine $(LIBFT_PATH)*.h
+	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)*.c
+	@norminette -R CheckDefine $(FT_PRINTF_PATH)*.h
+	@norminette -R CheckForbiddenSourceHeader $(SRC)
+
 
 clean :
 	@make -C $(LIBFT_PATH) clean

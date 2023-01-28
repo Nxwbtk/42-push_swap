@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/25 11:31:38 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:36:42 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ typedef struct	s_stack
 }				t_stack;
 
 void	ft_check_arg(char *argv[]);
+void	ft_add_back(t_stack **old, t_stack *newlst);
+void	ft_check_same(t_stack *a);
+t_stack	*ft_lst_mai(int data);
+t_stack	*ft_lst_last(t_stack *lst);
 
 #endif

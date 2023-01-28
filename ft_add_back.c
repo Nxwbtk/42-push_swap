@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/28 13:37:55 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/01/28 13:40:03 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/01/28 15:13:31 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_arg(char *argv[])
+void	ft_add_back(t_stack **old, t_stack *newlst)
 {
-	int	i;
-	int	j;
+	t_stack	*last;
 
-	i = 1;
-	while (argv[i])
+	if (old && newlst)
 	{
-		j = 0;
-		while (argv[i][j])
+		if (!(*old))
+			*old = newlst;
+		else
 		{
-			if (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
-				j++;
-			else
-			{
-				ft_printf("Error Argument is not number.\n");
-				exit(EXIT_SUCCESS);
-			}
+			last = ft_lst_last(*old);
+			last->next = newlst;
 		}
-		i++;
 	}
 }

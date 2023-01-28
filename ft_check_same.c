@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   ft_check_same.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/28 13:37:55 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/01/28 15:18:31 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/01/28 15:44:06 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_arg(char *argv[])
+void	ft_check_same(t_stack *a)
 {
-	int	i;
-	int	j;
+	t_stack	*ptr;
 
-	i = 1;
-	while (argv[i])
+	while (a && a->next)
 	{
-		j = 0;
-		while (argv[i][j])
+		ptr = a->next;
+		while (ptr)
 		{
-			if (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
-				j++;
-			else
+			if (a->data == ptr->data)
 			{
-				ft_printf("Error Argument is not number.\n");
+				ft_printf("There is some data that duplicated.\n");
+				free(a);
 				exit(EXIT_SUCCESS);
 			}
+			ptr = ptr->next;
 		}
-		i++;
+		a = a->next;
 	}
 }
