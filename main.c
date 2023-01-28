@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/29 01:25:46 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/01/29 02:57:14 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack	*yud_to_stack(char *argv[])
 	int		j;
 	char	**av;
 	t_stack	*a;
-	t_stack	*b;
 	t_stack	*new;
 
 	i = 1;
@@ -60,12 +59,28 @@ void	ft_free_stack(t_stack *a)
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
+	t_stack	*b;
 
+	b = NULL;
 	if (argc <= 2)
 		ft_less_arg("Arguments are less than 3");
 	ft_check_arg(argv);
 	a = yud_to_stack(argv);
 	ft_check_same(a);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_sb(&b);
+	while (a)
+	{
+		ft_printf("a->data = %d\n", a->data);
+		a = a->next;
+	}
+	while (b)
+	{
+		ft_printf("b->data = %d\n", b->data);
+		b = b->next;
+	}
 	ft_free_stack(a);
 	return (0);
 }
