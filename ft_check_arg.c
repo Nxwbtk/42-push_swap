@@ -6,31 +6,57 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/28 13:37:55 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/01/29 01:23:41 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_arg(char *argv[])
+void	free_av(char **av)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
+}
+
+void	error_arg(char **av)
+{
+	ft_printf("Error Argument is not number.\n");
+	free_av(av);
+	exit(EXIT_SUCCESS);
+}
+
+void	ft_check_arg(char *argv[])
+{
+	int		i;
+	int		j;
+	char	**av;
+	int		x;
+
+	i = 0;
+	while (argv[i] && argv[i + 1])
 	{
 		j = 0;
-		while (argv[i][j])
+		av = ft_split(argv[i + 1], ' ');
+		while (av[j])
 		{
-			if (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
-				j++;
-			else
+			x = 0;
+			while (av[j][x])
 			{
-				ft_printf("Error Argument is not number.\n");
-				exit(EXIT_SUCCESS);
+				if (av[j][x] == '-' || av[j][x] == ' ' || ft_isdigit(av[j][x]))
+					x++;
+				else
+					error_arg(av);
 			}
+			j++;
 		}
+		free_av(av);
 		i++;
 	}
 }

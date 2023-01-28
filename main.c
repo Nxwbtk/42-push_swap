@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/28 16:34:13 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/01/29 01:25:46 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,42 @@ void	ft_less_arg(char *str)
 	exit(EXIT_SUCCESS);
 }
 
-void	yud_to_stack(char *argv[], t_stack *a)
+t_stack	*yud_to_stack(char *argv[])
 {
 	int		i;
+	int		j;
+	char	**av;
+	t_stack	*a;
+	t_stack	*b;
 	t_stack	*new;
 
-	i = 2;
+	i = 1;
+	a = NULL;
 	while (argv[i])
 	{
-		new = ft_lst_mai(ft_atoi(argv[i]));
-		ft_add_back(&a, new);
+		j = 0;
+		av = ft_split(argv[i], ' ');
+		while (av[j])
+		{
+			new = ft_lst_mai(ft_atoi(av[j]));
+			ft_add_back(&a, new);
+			j++;
+		}
+		free_av(av);
 		i++;
+	}
+	return (a);
+}
+
+void	ft_free_stack(t_stack *a)
+{
+	t_stack	*ptr;
+
+	while (a)
+	{
+		ptr = a;
+		a = a->next;
+		free(ptr);
 	}
 }
 
@@ -39,21 +64,8 @@ int	main(int argc, char *argv[])
 	if (argc <= 2)
 		ft_less_arg("Arguments are less than 3");
 	ft_check_arg(argv);
-	a = ft_lst_mai(ft_atoi(argv[1]));
-	yud_to_stack(argv, a);
+	a = yud_to_stack(argv);
 	ft_check_same(a);
-	t_stack	*pr = a;
-	while (pr)
-	{
-		ft_printf("a = %d\n", pr->data);
-		pr = pr->next;
-	}
-	t_stack	*ptr;
-	while (a)
-	{
-		ptr = a;
-		a = a->next;
-		free(ptr);
-	}
+	ft_free_stack(a);
 	return (0);
 }

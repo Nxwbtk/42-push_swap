@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/01/28 15:33:17 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/01/29 01:24:36 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ ft_printf :
 	@make -C $(FT_PRINTF_PATH) 1> /dev/null
 
 norm :
+	@say "Check norm bab mai greng jei kai"
 	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)*.c
 	@norminette -R CheckDefine $(LIBFT_PATH)*.h
 	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)*.c
