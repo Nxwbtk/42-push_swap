@@ -67,20 +67,6 @@ int	main(int argc, char *argv[])
 	ft_check_arg(argv);
 	a = yud_to_stack(argv);
 	ft_check_same(a);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_sb(&b);
-	while (a)
-	{
-		ft_printf("a->data = %d\n", a->data);
-		a = a->next;
-	}
-	while (b)
-	{
-		ft_printf("b->data = %d\n", b->data);
-		b = b->next;
-	}
 	ft_free_stack(a);
 	return (0);
 }
