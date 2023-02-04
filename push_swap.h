@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/29 03:06:22 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/04 16:21:00 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_stack
 {
 	int				data;
+	int				index;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -25,6 +26,7 @@ void	ft_check_arg(char *argv[]);
 void	ft_add_back(t_stack **old, t_stack *newlst);
 void	ft_check_same(t_stack *a);
 void	free_av(char **av);
+void	ft_get_index(t_stack *a);
 void	ft_sa(t_stack **a);
 void	ft_sb(t_stack **b);
 void	ft_ra(t_stack **a);
