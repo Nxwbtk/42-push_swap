@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_get_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:20:33 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/04 22:28:14 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/05 01:57:18 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,13 @@ int	ft_more_min(int min, t_stack *a)
 	while (tmp)
 	{
 		if (tmp->data > min)
-		{
 			more = tmp->data;
-		}
 		tmp = tmp->next;
 	}
 	while (a)
 	{
 		if (a->data > min && a->data < more)
-		{
 			more = a->data;
-		}
 		a = a->next;
 	}
 	return (more);
