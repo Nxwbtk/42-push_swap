@@ -59,9 +59,9 @@ void	ft_free_stack(t_stack *a)
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 
-	b = NULL;
+	// b = NULL;
 	if (argc <= 2)
 		ft_less_arg("Arguments are less than 3");
 	ft_check_arg(argv);
@@ -76,20 +76,7 @@ int	main(int argc, char *argv[])
 	// 	ft_printf("index = %d\n", tmp->index);
 	// 	tmp = tmp->next;
 	// }
-	while (tmp)
-	{
-		if ((tmp->index & 1) == 0)
-		{
-			ft_pb(&a, &b);
-		}
-		tmp = tmp->next;
-	}
-	tmp = b;
-	while (tmp)
-	{
-		ft_printf("index = %d\n", tmp->index);
-		tmp = tmp->next;
-	}
+
 	// ft_printf("a = %d\n", ft_khanad(a));
 	ft_free_stack(a);
 	return (0);

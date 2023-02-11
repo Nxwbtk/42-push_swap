@@ -6,14 +6,14 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/04 22:48:52 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/02/11 04:10:09 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = main.c ft_check_arg.c ft_lst_mai.c ft_add_back.c ft_lst_last.c \
-ft_check_same.c ft_swap_a.c ft_swap_b.c ft_get_index.c
+ft_check_same.c ft_swap_a.c ft_swap_b.c ft_get_index.c ft_sort.c
 
 OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj
