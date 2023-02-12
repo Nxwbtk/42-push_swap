@@ -6,20 +6,21 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/11 04:10:09 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/02/12 22:29:27 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = main.c ft_check_arg.c ft_lst_mai.c ft_add_back.c ft_lst_last.c \
-ft_check_same.c ft_swap_a.c ft_swap_b.c ft_get_index.c ft_sort.c
+ft_check_same.c ft_swap_a.c ft_swap_b.c ft_get_index.c ft_sort.c \
+ft_khanad_sam.c
 
 OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj
 OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ_C))
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 HEADER = push_swap.h
 RM = rm -f
 LIBFT_PATH = libft/
@@ -43,7 +44,8 @@ ft_printf :
 	@make -C $(FT_PRINTF_PATH) 1> /dev/null
 
 norm :
-	@say "Check norm bab mai greng jei kai"
+#@say "Check norm bab mai greng jei kai"
+	@echo "Check norm bab mai greng jei kai" | espeak
 	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)*.c
 	@norminette -R CheckDefine $(LIBFT_PATH)*.h
 	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)*.c

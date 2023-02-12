@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/05 00:45:52 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/12 23:53:23 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,25 @@ void	ft_free_stack(t_stack *a)
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*b;
 
-	// b = NULL;
+	b = NULL;
 	if (argc <= 2)
 		ft_less_arg("Arguments are less than 3");
 	ft_check_arg(argv);
 	a = yud_to_stack(argv);
 	ft_check_same(a);
 	ft_get_index(a);
+	ft_select_arg(a, b);
 	t_stack	*tmp;
 
 	tmp = a;
-	// while (tmp)
-	// {
-	// 	ft_printf("index = %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-
-	// ft_printf("a = %d\n", ft_khanad(a));
+	while (tmp)
+	{
+		ft_printf("%d\n", tmp->data);
+		tmp = tmp->next;
+	}
+	ft_printf("size a = %d\n", ft_khanad(a));
 	ft_free_stack(a);
 	return (0);
 }
