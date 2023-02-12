@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/12 22:30:21 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:00:08 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_ss(t_stack **a, t_stack **b);
 void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 void	ft_select_arg(t_stack *a, t_stack *b);
-void	ft_khanad_sam(t_stack *a);
+void	ft_khanad_sam(t_stack **a);
 t_stack	*ft_lst_mai(int data);
 t_stack	*ft_lst_last(t_stack *lst);
 

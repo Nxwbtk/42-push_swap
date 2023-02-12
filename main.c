@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/12 23:53:23 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/13 02:56:37 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,6 @@ int	main(int argc, char *argv[])
 	ft_check_same(a);
 	ft_get_index(a);
 	ft_select_arg(a, b);
-	t_stack	*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		ft_printf("%d\n", tmp->data);
-		tmp = tmp->next;
-	}
-	ft_printf("size a = %d\n", ft_khanad(a));
 	ft_free_stack(a);
 	return (0);
 }
