@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:19:57 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/13 01:54:31 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 05:14:39 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	ft_khanad_sam(t_stack **a)
 	}
 	else if (sam < song && nueng < song)
 		ft_rra(a);
-
 }

@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/13 02:56:37 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 05:17:55 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,13 @@ void	ft_free_stack(t_stack *a)
 {
 	t_stack	*ptr;
 
-	while (a)
+	while (a && a->next)
 	{
 		ptr = a;
 		a = a->next;
 		free(ptr);
 	}
+	free(a);
 }
 
 int	main(int argc, char *argv[])
@@ -68,7 +69,7 @@ int	main(int argc, char *argv[])
 	a = yud_to_stack(argv);
 	ft_check_same(a);
 	ft_get_index(a);
-	ft_select_arg(a, b);
+	ft_select_arg(&a, &b);
 	ft_free_stack(a);
 	return (0);
 }

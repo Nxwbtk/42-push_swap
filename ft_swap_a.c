@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 02:11:02 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/13 01:46:22 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 05:10:04 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_sa(t_stack **a)
 {
-	t_stack	*temp;
+	t_stack	*tmp;
 
-	temp = (*a)->next;
+	tmp = (*a)->next;
 	(*a)->next = (*a)->next->next;
-	temp->next = (*a);
-	(*a) = temp;
+	tmp->next = *a;
+	*a = tmp;
 }
 
 void	ft_ra(t_stack **a)

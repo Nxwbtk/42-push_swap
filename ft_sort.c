@@ -6,20 +6,21 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 04:09:42 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/13 03:04:07 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 05:16:43 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_select_arg(t_stack *a, t_stack *b)
+void	ft_select_arg(t_stack **a, t_stack **b)
 {
 	int	size;
 	// t_stack *tmp;
 
-	size = ft_khanad(a);
+	size = ft_khanad(*a);
 	if (size == 3)
-		ft_khanad_sam(&a);
+		ft_khanad_sam(a);
+
 	// if (size == 5)
 
 	// tmp = a;
