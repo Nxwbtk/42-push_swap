@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 19:07:43 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:12:33 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	loop_check(int j, int x, char **av)
 		j++;
 	}
 	if (j == 1 && x == 1)
-		error_arg(av, "Argrument is less than 2\n");
+		error_arg(av, "Argrument is less than 2.\n");
 }
 
 void	ft_check_arg(char *argv[])

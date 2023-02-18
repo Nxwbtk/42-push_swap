@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 18:36:59 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:45:38 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int argc, char *argv[])
 
 	b = NULL;
 	if (argc < 2)
-		ft_less_arg("Arguments are less than 2");
+		ft_less_arg("Arguments are less than 2.");
 	ft_check_arg(argv);
 	a = yud_to_stack(argv);
 	ft_check_same(a);
