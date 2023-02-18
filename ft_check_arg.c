@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 19:01:59 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:07:43 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ void	ft_check_arg(char *argv[])
 
 	i = 0;
 	x = 0;
+	if (!argv[1][0])
+	{
+		ft_printf("No argrument.\n");
+		exit(EXIT_SUCCESS);
+	}
 	while (argv[i] && argv[i + 1])
 	{
 		j = 0;
