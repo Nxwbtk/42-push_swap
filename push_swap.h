@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 23:00:20 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/18 07:40:48 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
-
+# include <stdio.h>
 typedef struct	s_stack
 {
 	int				data;
@@ -22,6 +22,7 @@ typedef struct	s_stack
 	struct s_stack	*next;
 }				t_stack;
 
+void	print(t_stack *a);
 int		ft_khanad(t_stack *a);
 void	ft_check_arg(char *argv[]);
 void	ft_add_back(t_stack **old, t_stack *newlst);
@@ -44,6 +45,7 @@ void	ft_khanad_sam(t_stack **a);
 void	ft_khanad_ha(t_stack **a, t_stack **b);
 void	ft_khanad_song(t_stack **a);
 void	ft_khanad_songb(t_stack **b);
+void	ft_khanad_other(t_stack **a, t_stack **b);
 t_stack	*ft_lst_mai(int data);
 t_stack	*ft_lst_last(t_stack *lst);
 

@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 04:09:42 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 18:29:13 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/18 06:39:39 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_select_arg(t_stack **a, t_stack **b)
 		ft_khanad_sam(a);
 	if (size == 5)
 		ft_khanad_ha(a, b);
+	else
+		ft_khanad_other(a, b);
 
 
 	// tmp = a;
