@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 19:45:38 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:44:19 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	print(t_stack *a);
 
-void	ft_less_arg(char *str)
+void	ft_less_arg(void)
 {
-	ft_printf("%s\n", str);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_SUCCESS);
 }
 
@@ -65,8 +65,9 @@ int	main(int argc, char *argv[])
 	t_stack	*b;
 
 	b = NULL;
-	if (argc < 2)
-		ft_less_arg("Arguments are less than 2.");
+
+	if (argc <= 2)
+		ft_less_arg();
 	ft_check_arg(argv);
 	a = yud_to_stack(argv);
 	ft_check_same(a);

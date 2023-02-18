@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:18:31 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/28 15:44:06 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/17 23:38:30 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_check_same(t_stack *a)
 		{
 			if (a->data == ptr->data)
 			{
-				ft_printf("There is some data that duplicated.\n");
+				ft_putstr_fd("Error\n", 2);
 				free(a);
 				exit(EXIT_SUCCESS);
 			}

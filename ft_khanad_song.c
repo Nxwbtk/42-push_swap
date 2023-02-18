@@ -10,3 +10,14 @@ void	ft_khanad_song(t_stack **a)
 	if (song < nueng)
 		ft_sa(a);
 }
+
+void	ft_khanad_songb(t_stack **b)
+{
+	int	nueng;
+	int	song;
+
+	nueng = (*b)->data;
+	song = (*b)->next->data;
+	if (song < nueng)
+		ft_sb(b);
+}
