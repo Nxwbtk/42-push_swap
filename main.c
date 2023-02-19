@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/18 00:44:19 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/19 22:35:31 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,9 @@ int	main(int argc, char *argv[])
 	a = yud_to_stack(argv);
 	ft_check_same(a);
 	ft_get_index(a);
+	// printf("%d\n", check_sort(a));
 	ft_select_arg(&a, &b);
-	print(a);
+	// print(a);
 	ft_free_stack(a);
 	return (0);
 }
