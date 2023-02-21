@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/19 21:22:21 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 03:06:58 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_rr(t_stack **a, t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 void	ft_select_arg(t_stack **a, t_stack **b);
 void	ft_khanad_sam(t_stack **a);
+void	ft_khanad_sie(t_stack **a, t_stack **b);
 void	ft_khanad_ha(t_stack **a, t_stack **b);
 void	ft_khanad_song(t_stack **a);
 void	ft_khanad_songb(t_stack **b);

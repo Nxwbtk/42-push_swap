@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_khanad_sie.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 04:09:42 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/22 03:48:12 by bsirikam         ###   ########.fr       */
+/*   Created: 2023/02/22 03:06:14 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/02/22 03:23:23 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_select_arg(t_stack **a, t_stack **b)
+void	ft_khanad_sie(t_stack **a, t_stack **b)
 {
-	int	size;
-
-	size = ft_khanad(*a);
-	if (size == 2)
-		ft_khanad_song(a);
-	if (size == 3)
-		ft_khanad_sam(a);
-	if (size == 4)
-		ft_khanad_sie(a, b);
-	if (size == 5)
-		ft_khanad_ha(a, b);
-	else
-		ft_khanad_other(a, b);
+	while (ft_khanad(*a) != 3)
+	{
+		if ((*a)->index == 1)
+			ft_pb(a, b);
+		ft_ra(a);
+	}
+	ft_khanad_sam(a);
+	ft_pa(a, b);
 }

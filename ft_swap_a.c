@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 02:11:02 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/17 05:10:04 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 02:57:50 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_sa(t_stack **a)
 	(*a)->next = (*a)->next->next;
 	tmp->next = *a;
 	*a = tmp;
+	ft_printf("sa\n");
 }
 
 void	ft_ra(t_stack **a)
@@ -27,11 +28,16 @@ void	ft_ra(t_stack **a)
 	t_stack	*last;
 	t_stack	*tmp;
 
+	if (ft_khanad(*a) == 1)
+		return ;
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
 	tmp = (*a);
 	(*a) = (*a)->next;
 	last = ft_lst_last(*a);
 	last->next = tmp;
 	tmp->next = NULL;
+	ft_printf("ra\n");
 }
 
 void	ft_rra(t_stack **a)
@@ -46,6 +52,7 @@ void	ft_rra(t_stack **a)
 	tmp->next = NULL;
 	first->next = (*a);
 	(*a) = first;
+	ft_printf("rra\n");
 }
 
 void	ft_pa(t_stack **a, t_stack **b)
@@ -65,4 +72,5 @@ void	ft_pa(t_stack **a, t_stack **b)
 		tmp->next = *a;
 		*a = tmp;
 	}
+	ft_printf("pa\n");
 }

@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:20:33 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/05 01:57:18 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 02:44:30 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	ft_khanad(t_stack *a)
 	int		i;
 	t_stack	*tmp;
 
+	if (!a)
+		return (0);
 	tmp = a;
 	i = 0;
 	while (tmp)

@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 02:33:10 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/01/29 03:03:49 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 02:58:20 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ void	ft_pb(t_stack **a, t_stack **b)
 	}
 	else
 	{
+		if (ft_khanad(*a) == 0)
+			return ;
 		tmp = *a;
 		*a = (*a)->next;
 		tmp->next = *b;
 		*b = tmp;
 	}
+	ft_printf("pb\n");
 }
 
 void	ft_sb(t_stack **b)
@@ -39,6 +42,7 @@ void	ft_sb(t_stack **b)
 	(*b)->next = (*b)->next->next;
 	temp->next = (*b);
 	(*b) = temp;
+	ft_printf("sb\n");
 }
 
 void	ft_rrb(t_stack **b)
@@ -53,6 +57,7 @@ void	ft_rrb(t_stack **b)
 	tmp->next = NULL;
 	first->next = (*b);
 	(*b) = first;
+	ft_printf("rrb\n");
 }
 
 void	ft_rb(t_stack **b)
@@ -65,4 +70,5 @@ void	ft_rb(t_stack **b)
 	last = ft_lst_last(*b);
 	last->next = tmp;
 	tmp->next = NULL;
+	ft_printf("rb\n");
 }

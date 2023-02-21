@@ -1,4 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_khanad_other.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/22 03:58:01 by bsirikam          #+#    #+#             */
+/*   Updated: 2023/02/22 04:07:54 by bsirikam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+void	assign(int *one, int *two, t_stack *tmp)
+{
+	*one = tmp->index;
+	*two = tmp->next->index;
+}
+
+void	sub_if(int *one, int *two, t_stack **tmp)
+{
+	*one = *two;
+	if ((*tmp)->next->next)
+	{
+		*tmp = (*tmp)->next;
+		*two = (*tmp)->next->index;
+	}
+}
 
 int	check_sort(t_stack *a)
 {
@@ -10,22 +38,14 @@ int	check_sort(t_stack *a)
 
 	tmp = a;
 	size = ft_khanad(a);
-	one = tmp->index;
-	two = tmp->next->index;
+	assign(&one, &two, tmp);
 	x = 1;
-	printf("size = %d\n", size);
 	while (tmp && tmp->next && x != size)
 	{
 		if (one < two)
 		{
-			printf("one = %d, two = %d\n", one, two);
 			x++;
-			one = two;
-			if (tmp->next->next)
-			{
-				tmp = tmp->next;
-				two = tmp->next->index;
-			}
+			sub_if(&one, &two, &tmp);
 		}
 		else
 			return (0);
@@ -33,12 +53,9 @@ int	check_sort(t_stack *a)
 	return (1);
 }
 
-void	ft_throwback_a(t_stack **a, t_stack **b)
+void	ft_throwback_a(t_stack **a, t_stack **b, int yao)
 {
-	int	size;
-
-	size = ft_khanad(*b);
-	while (ft_khanad(*a) != size)
+	while (ft_khanad(*a) != yao)
 	{
 		ft_pa(a, b);
 	}
@@ -47,51 +64,24 @@ void	ft_throwback_a(t_stack **a, t_stack **b)
 void	ft_khanad_other(t_stack **a, t_stack **b)
 {
 	int		x;
-	t_stack	*tmp;
 	int		size;
-	int		i;
+	int		j;
 
 	x = 1;
-	i = 0;
+	j = 1;
 	size = ft_khanad(*a);
 	while (check_sort(*a) == 0)
 	{
 		x = 0;
 		while (x != size)
 		{
-			tmp = *a;
-			tmp->index = tmp->index >> 1;
-			if ((tmp->index & 1) == 0)
-			{
+			if (*a != NULL && (((*a)->index >> j) & 1) == 0)
 				ft_pb(a, b);
-			}
 			else
-			{
-				printf("else \n");
 				ft_ra(a);
-			}
-			printf("a\n");
-			print(*a);
-			printf("b\n");
-			print(*b);
 			x++;
-			if (*a == NULL && ft_khanad(*b) == size)
-			{
-				ft_throwback_a(a, b);
-			}
-			sleep(1);
 		}
-
-		// while (*b != NULL && ft_khanad(*a) != size)
-		// {
-		// 	ft_pa(a, b);
-		// 	printf("------------------\n");
-		// 	printf("a pb \n");
-		// 	print(*a);
-		// 	printf("b pb \n");
-		// 	print(*b);
-		// 	printf("------------------\n");
-		// }
-		i++;
+		ft_throwback_a(a, b, size);
+		j++;
 	}
 }
