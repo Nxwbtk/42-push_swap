@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 00:06:21 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/18 00:46:24 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:08:09 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	loop(char **av, int j)
 	{
 		if (av[j][x] == '-' || av[j][x] == ' ' || ft_isdigit(av[j][x]))
 		{
-			if (av[j][x] == '-')
+			if (av[j][x] == '-' && !av[j][x + 1])
 			{
 				minus++;
 				if (minus > 1)

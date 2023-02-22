@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 03:58:01 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/22 04:07:54 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:07:09 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_khanad_other(t_stack **a, t_stack **b)
 	int		j;
 
 	x = 1;
-	j = 1;
+	j = 0;
 	size = ft_khanad(*a);
 	while (check_sort(*a) == 0)
 	{
