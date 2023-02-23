@@ -12,17 +12,33 @@
 
 #include "libft.h"
 
+void	check_gern(long result)
+{
+	if (result >= 2147483647 || result <= -2147483648)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(EXIT_SUCCESS);
+	}
+}
+
+int	ft_isspace(char c)
+{
+	if (c == '\t' || c == ' ' || c == '\f' || c == '\n' || c == '\r' \
+	|| c == '\v')
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *chnb)
 {
-	int	i;
-	int	count;
-	int	result;
+	int		i;
+	long	count;
+	long	result;
 
 	i = 0;
 	result = 0;
 	count = 1;
-	while (chnb[i] == ' ' || chnb[i] == '\t' || chnb[i] == '\n'
-		|| chnb[i] == '\f' || chnb[i] == '\v' || chnb[i] == '\r')
+	while (ft_isspace(chnb[i]))
 		i++;
 	if (chnb[i] == '-' || chnb[i] == '+')
 	{
@@ -35,5 +51,6 @@ int	ft_atoi(const char *chnb)
 		result = result * 10 + (chnb[i] - '0');
 		i++;
 	}
+	check_gern(result);
 	return (result * count);
 }
