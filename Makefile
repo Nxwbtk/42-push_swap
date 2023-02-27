@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/23 10:05:13 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/02/27 00:19:36 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 SRC = main.c ft_check_arg.c ft_lst_mai.c ft_add_back.c ft_lst_last.c \
 ft_check_same.c ft_swap_a.c ft_swap_b.c ft_get_index.c ft_sort.c \
 ft_khanad_sam.c ft_khanad_ha.c ft_khanad_song.c ft_khanad_other.c \
-ft_khanad_sie.c
+ft_khanad_sie.c ft_check_argv.c
 
 OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj

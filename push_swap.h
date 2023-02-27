@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/22 03:06:58 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/02/27 00:19:54 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_stack
 }				t_stack;
 
 void	print(t_stack *a);
+void	oak(void);
 int		ft_khanad(t_stack *a);
 int		check_sort(t_stack *a);
 void	ft_check_arg(char *argv[]);
@@ -48,6 +49,7 @@ void	ft_khanad_ha(t_stack **a, t_stack **b);
 void	ft_khanad_song(t_stack **a);
 void	ft_khanad_songb(t_stack **b);
 void	ft_khanad_other(t_stack **a, t_stack **b);
+void	ft_check_argv(char **argv);
 t_stack	*ft_lst_mai(int data);
 t_stack	*ft_lst_last(t_stack *lst);
 
