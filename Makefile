@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/03/04 02:27:31 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/03/04 03:25:24 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj
 OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ_C))
 CC = gcc
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 HEADER = push_swap.h
 RM = rm -f
 LIBFT_PATH = libft/
@@ -49,6 +49,7 @@ norm :
 	@norminette -R CheckDefine $(LIBFT_PATH)*.h
 	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)*.c
 	@norminette -R CheckDefine $(FT_PRINTF_PATH)*.h
+	@norminette -R CheckDefine $(NAME).h
 	@norminette -R CheckForbiddenSourceHeader $(SRC)
 
 

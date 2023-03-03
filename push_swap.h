@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/03/04 02:08:34 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/03/04 03:25:49 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
 # include <stdio.h>
-typedef struct	s_stack
+
+typedef struct s_stack
 {
 	int				data;
 	int				index;
