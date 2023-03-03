@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:08:54 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/27 00:19:54 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/03/04 02:08:34 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		check_sort(t_stack *a);
 void	ft_check_arg(char *argv[]);
 void	ft_add_back(t_stack **old, t_stack *newlst);
 void	ft_check_same(t_stack *a);
+void	ft_free_stack(t_stack *a);
 void	free_av(char **av);
 void	ft_get_index(t_stack *a);
 void	ft_sa(t_stack **a);
@@ -50,6 +51,7 @@ void	ft_khanad_song(t_stack **a);
 void	ft_khanad_songb(t_stack **b);
 void	ft_khanad_other(t_stack **a, t_stack **b);
 void	ft_check_argv(char **argv);
+void	end_program(t_stack *a);
 t_stack	*ft_lst_mai(int data);
 t_stack	*ft_lst_last(t_stack *lst);
 

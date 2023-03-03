@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 13:25:30 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/04 15:01:58 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/03/03 20:50:28 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_stack	*ft_lst_mai(int data)
 {
 	t_stack	*stack;
 
+	stack = NULL;
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);

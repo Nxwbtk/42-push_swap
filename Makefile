@@ -6,7 +6,7 @@
 #    By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:33:01 by bsirikam          #+#    #+#              #
-#    Updated: 2023/02/27 00:19:36 by bsirikam         ###   ########.fr        #
+#    Updated: 2023/03/03 21:41:37 by bsirikam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ_C = $(SRC:.c=.o)
 OBJ_DIR = obj
 OBJ := $(addprefix $(OBJ_DIR)/, $(OBJ_C))
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 HEADER = push_swap.h
 RM = rm -f
 LIBFT_PATH = libft/
@@ -36,7 +36,7 @@ $(OBJ_DIR)/%.o: %.c $(HEADER)
 all :  $(NAME)
 
 $(NAME) : libft ft_printf $(OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT_A) $(FT_PRINTF_A)
+	@$(CC) -g $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT_A) $(FT_PRINTF_A)
 
 libft :
 	@make -C $(LIBFT_PATH) 1> /dev/null
@@ -45,8 +45,8 @@ ft_printf :
 	@make -C $(FT_PRINTF_PATH) 1> /dev/null
 
 norm :
-#@say "Check norm bab mai greng jei kai"
-	@echo "Check norm bab mai greng jei kai" | espeak
+	@say "Check norm bab mai greng jei kai"
+# @echo "Check norm bab mai greng jei kai" | espeak
 	@norminette -R CheckForbiddenSourceHeader $(LIBFT_PATH)*.c
 	@norminette -R CheckDefine $(LIBFT_PATH)*.h
 	@norminette -R CheckForbiddenSourceHeader $(FT_PRINTF_PATH)*.c

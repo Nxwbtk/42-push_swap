@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 00:09:44 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/02/23 10:55:30 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/03/04 02:09:02 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	main(int argc, char *argv[])
 	t_stack	*a;
 	t_stack	*b;
 
+	a = NULL;
 	b = NULL;
 	if (argc < 2)
 		ft_less_arg();
@@ -70,17 +71,12 @@ int	main(int argc, char *argv[])
 	a = yud_to_stack(argv);
 	ft_check_same(a);
 	ft_get_index(a);
+	if (ft_khanad(a) == 1)
+		end_program(a);
 	if (check_sort(a) == 1)
-	{
-		ft_putstr_fd("Error\n", 2);
-		ft_free_stack(a);
-		exit(EXIT_SUCCESS);
-	}
+		end_program(a);
 	if (check_sort(a))
-	{
-		ft_free_stack(a);
-		exit(EXIT_SUCCESS);
-	}
+		end_program(a);
 	ft_select_arg(&a, &b);
 	ft_free_stack(a);
 	return (0);
