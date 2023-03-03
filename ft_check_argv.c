@@ -6,7 +6,7 @@
 /*   By: bsirikam <bsirikam@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 00:18:09 by bsirikam          #+#    #+#             */
-/*   Updated: 2023/03/04 02:08:23 by bsirikam         ###   ########.fr       */
+/*   Updated: 2023/03/04 02:28:01 by bsirikam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ void	ft_check_argv(char **argv)
 		ft_putstr_fd("Error\n", 2);
 		exit(EXIT_SUCCESS);
 	}
-	// if (!argv[1][2] || (argv[1][0] && !argv[1][2] && !argv[2]))
-	// {
-	// 	exit(EXIT_SUCCESS);
-	// }
 	if (argv[1][0] && !argv[2] && (!argv[1][2] || !argv[1][1]))
 	{
 		exit(EXIT_SUCCESS);

@@ -15,7 +15,6 @@
 
 void	check_gern(long result)
 {
-	// printf("%ld\n", result);
 	if (result > 2147483647 || result < -2147483648)
 	{
 		ft_putstr_fd("Error\n", 2);
